@@ -1,5 +1,5 @@
 from django.shortcuts import redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from shortener import shortener
 
 
@@ -17,9 +17,4 @@ def expand(request, link):
         link = shortener.expand(link)
         return redirect(link)
     except Exception as e:
-        if 'invalid shortlink' in e.args:
-            # A 404 response would be correct here, but unfortunately it did not hook in to the 404 handler in our project.  
-            #return HttpResponse(status=404)
-            return redirect('/')  # So instead we redirect to the start page
-        else:
-            return HttpResponse(e.args)
+        raise Http404(e)
