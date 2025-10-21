@@ -1,4 +1,4 @@
-# django-link-shortener
+# django-link-shortener • amnesty.se clone
 
 [![image](https://github.com/ronaldgrn/django-link-shortener/actions/workflows/django-tests.yml/badge.svg)](https://github.com/ronaldgrn/django-link-shortener/actions/workflows/django-tests.yml)
 [![PyPI - License](https://img.shields.io/pypi/l/django-link-shortener.svg)](https://pypi.org/project/django-link-shortener/)
@@ -21,7 +21,7 @@ django-link-shortener is a Django app for creating time-limited and usage-capped
 
 ## Usage
 
-1.  Install with `pip install django-link-shortener`
+1.  Install with `pip install -e git+https://github.com/Amnesty-International-Sv-sektionen/django-link-shortener.git@main#egg=django-link-shortener`
 
 2.  Add `shortener` to your INSTALLED_APPS setting:
 
