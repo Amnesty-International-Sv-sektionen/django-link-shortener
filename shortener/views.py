@@ -1,5 +1,5 @@
 from django.shortcuts import redirect
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse #, HttpResponseRedirect
 from shortener import shortener
 
 
@@ -18,7 +18,7 @@ def expand(request, link):
         return redirect(link)  # TODO: permanent=True
     except Exception as e:
         if 'invalid shortlink' in e.args:
-            #return HttpResponse(status=404)
-            return HttpResponseRedirect('/')
+            return HttpResponse(status=404)
+            #return HttpResponseRedirect('/')
         else:
             return HttpResponse(e.args)
